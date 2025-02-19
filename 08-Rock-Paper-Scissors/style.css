@@ -1,0 +1,86 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    background-color:#a8dadc;
+    height: 6rem;
+    text-align:center;
+    line-height: 6rem;  /* to vertically make the text center   */
+
+}
+
+.item{
+    height: 165px;
+    width: 165px;
+    border-radius:50%;
+    display:flex;
+    justify-content: center;
+    align-items: center;  
+}
+
+.item:hover{
+    
+    cursor:pointer;
+    background-color:black;
+}
+
+img{
+    height: 150px;
+    width: 150px;
+    object-fit:cover;
+   
+}
+
+/*rock paper scissors design*/
+.choice{
+
+    display: flex;      /* to show all the choices divs item horizontally in one line*/
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    margin-top: 5rem;   
+
+}
+
+.scoreboard{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:50px;
+    margin-top: 5rem;
+
+    font-size: 2rem;
+}
+
+
+#user-score,#comp-score{
+    font-size:4rem;
+}
+
+.msg-container{
+    margin-top: 5rem;
+    display:flex;
+    justify-content:center;
+}
+
+
+#msg{
+
+    background-color:#cbe8ea;
+    color:black;
+    font-size: 2rem;
+    display:inline;
+    padding: 1rem;
+    border-radius: 4px;
+    
+}
+
+#msg:hover{
+
+    font-size:3rem;
+    background-color:paleturquoise;
+    
+}
+

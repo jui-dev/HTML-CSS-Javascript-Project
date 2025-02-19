@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Feedback UI</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <!-- 1. div container will contain every element. -->
+    <div class="container" id="container">
+      <h1 class="heading">FeedBack UI</h1>
+      <!-- 2. this div "ratings-container" will store another 3 divs -->
+      <div class="ratings-container" id="ratings-container">
+        <!-- 2.1. this div "rating" will store an image -->
+        <div class="rating">
+          <img src="./images/unhappy.png" />
+          <small>Unhappy</small>
+        </div>
+        <!-- 2.2 this div "rating" will store an image -->
+        <div class="rating">
+          <img src="./images/neutral.png" />
+          <small>Neutral</small>
+        </div>
+        <!-- 2.3 this div "rating" will store an image -->
+        <div class="rating">
+          <img src="./images/Happy.png" />
+          <small>Satisfied</small>
+        </div>
+      </div>
+      <!-- 3. button -->
+      <button class="btn" id="btn">Send Review</button>
+    </div>
+    <script src="./index.js"></script>
+  </body>
+</html>

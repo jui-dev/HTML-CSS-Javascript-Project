@@ -1,0 +1,359 @@
+/* playfair-display-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Playfair Display";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/playfair-display-v37-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* playfair-display-700 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Playfair Display";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/playfair-display-v37-latin-700.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+:root {
+  --main-color: #deab5f;
+  --primary-color: #312e2e;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+button {
+  padding: 10px 30px;
+  background: var(--main-color);
+  border: none;
+  cursor: pointer;
+}
+
+body {
+  background: #100e0f;
+}
+
+/*navigation bar start*/
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: #fff;
+  font-family: sans-serif;
+  padding-top: 15px;
+}
+
+li {
+  display: inline;
+  list-style: none;
+}
+
+li a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 40px;
+}
+
+li a:hover {
+  border-bottom: 2px solid var(--main-color); /*after hovering over the link only bottom border will be visible*/
+}
+
+/*nav end*/
+
+/*Header Start*/
+.header {
+  background: url(./images/img15.webp);
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  font-family: "Playfair Display", serif;
+  font-weight: normal;
+  /*flexbox*/
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  position: relative;
+  text-align: center;
+}
+
+.main-headings {
+  position: absolute;
+  top: 7rem;
+  font-size: 4rem;
+}
+
+.primary-heading {
+  position: absolute;
+  bottom: 4rem;
+  font-size: 4rem;
+  word-spacing: 10px;
+  margin-bottom: -40px;
+}
+
+.main-btn {
+  position: absolute;
+  bottom: 2rem;
+  padding: 10px 30px;
+  margin-top: 20px;
+  background: transparent;
+  background: var(--main-color);
+  transform: translateY(60px);
+}
+
+/*Our story start*/
+#our-story {
+  height: 100vh;
+  margin-top: 15%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.img {
+  width: 400px;
+  height: 400px;
+  background: url(./images/img7.png);
+  background-position: center;
+  background-size: cover;
+}
+
+.title-style {
+  display: flex;
+  align-items: center;
+}
+
+.title {
+  font-family: serif;
+  font-size: 4rem;
+  color: #fff;
+  transform: translateX(-100px);
+}
+
+.line {
+  /*for line*/
+  width: 100px;
+  height: 2px;
+
+  background: #fff;
+  transform: translateX(-120px);
+}
+
+.section-content p {
+  max-width: 500px;
+  color: #fff;
+  font-family: sans-serif;
+  line-height: 20px;
+  margin: 20px 0;
+}
+
+/* Our story end*/
+
+/* Coffee Start*/
+
+.coffee-container {
+  display: flex;
+  font-weight: wrap;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 10rem;
+}
+
+.img-2 {
+  width: 400px;
+  height: 400px;
+}
+
+.title-two {
+  font-size: 3rem;
+  color: #fff;
+  font-family: sans-serif;
+}
+
+.content-section p {
+  max-width: 500px;
+  margin-top: 20px;
+  font-family: sans-serif;
+  color: #fff;
+}
+
+/* coffee end */
+
+/* products start */
+.products {
+  margin-top: 5rem;
+}
+
+.title-three {
+  font-size: 4rem;
+  margin-left: 10rem;
+  margin-top: 10rem;
+  margin-bottom: 10rem;
+}
+
+/* styling cards */
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.card {
+  border: 2px solid var(--main-color);
+  padding: 0 20px;
+  height: 400px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 5px;
+  position: relative;
+  margin-bottom: 4rem;
+}
+
+/* cards images */
+
+.card-img {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: -60px;
+}
+
+.img-one {
+  background: url(./images/img25.webp);
+  clip-path: circle(50% at 50% 50%);
+  background-position: center;
+  background-size: cover;
+}
+
+.img-two {
+  background: url(./images/img8.jpeg);
+  clip-path: circle(50% at 50% 50%);
+  background-position: center;
+  background-size: cover;
+}
+
+.img-three {
+  background: url(./images/img6.png);
+  clip-path: circle(50% at 50% 50%);
+  background-position: center;
+  background-size: cover;
+}
+
+/* card titles */
+
+.card-title {
+  color: #fff;
+  font-family: sans-serif;
+  margin-top: 50px;
+}
+
+/* card paragraphs */
+
+.card p {
+  color: #fff;
+  margin: 20px 0;
+  font-family: sans-serif;
+}
+
+/* card ends */
+
+/* footer area starts */
+
+footer {
+  height: 50vh;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-family: sans-serif;
+  margin-bottom: 30px;
+}
+
+.container {
+  margin: 20px;
+  max-width: 300px;
+  text-align: center;
+}
+
+footer.heading-info {
+  margin-bottom: 20px;
+}
+
+footer p {
+  line-height: 25px;
+}
+span {
+  color: var(--main-color);
+}
+
+.para {
+  color: #fff;
+  font-family: sans-serif;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* footer ends */
+
+/* responsiveness */
+
+@media only screen and (max-width: 768px) {
+  .main-headings,
+  .primary-heading {
+    font-size: 2.5rem;
+  }
+  #our-story {
+    text-align: center;
+  }
+  #our-story.title {
+    transform: translateX(50px);
+  }
+  #our-story.line {
+    display: none;
+  }
+  .content-section {
+    text-align: center;
+  }
+  #our-story.img-container.img {
+    width: 70%;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .coffee-container.img-container {
+    margin-top: 5rem;
+    width: 50%;
+  }
+  .title {
+    margin: 0 auto;
+  }
+  .title-two {
+    margin: 0 auto;
+  }
+
+  .title-three {
+    margin: 0 auto;
+  }
+
+  .para {
+    display: none;
+  }
+
+  hr {
+    display: none;
+  }
+}

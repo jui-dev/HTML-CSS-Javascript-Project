@@ -1,0 +1,87 @@
+/* 2. target the main body */
+body {
+  margin: 0;
+  background-color: lightcyan;
+  color: darkgreen;
+  /* --bring everything to the center start-- */
+  display: flex;
+  min-height: 100vh; /* -- without this "min-height" we could not use "align-items"-- */
+  justify-content: center; /* --bring everything to the center "horizontally"-- */
+  align-items: center; /* --bring everything to the center "vertically"-- */
+  /* bring everything to the center end */
+  font-family: monospace;
+}
+/* 3. target the container div that holds every element */
+.container {
+  background: rgba(255, 255, 255, 0.3); /* 0.3 = 30 % transparency */
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3); /* 0 = x-axis , 5px = y-axis , 10px = blurness, rgba(0, 0, 0, 0.3) = color transparency of the shadow*/
+  border-radius: 10px;
+  padding: 20px; /* --space inside the container-- */
+  width: 85%; /* -- % = width will be adjusted according to the device size -- */
+  max-width: 400px; /* -- the maximum width not going to be more than this size-- */
+  text-align: center; /* --bringing everything to the center of the div-- */
+  font-size: 20px;
+}
+
+/* 4. target the heading */
+
+.heading {
+  margin: 5px;
+  font-size: 30px;
+}
+
+/* 5. target the ratings-container div */
+.ratings-container {
+  display: flex; /* bring the ratings together horizontally */
+  padding: 20px 0; /* 20px = top-bottom , 0 = left-right */
+}
+
+/* 6. target the rating div that holds the image and the text */
+.rating {
+  cursor: pointer;
+  padding: 10px;
+  margin: 10px 5px; /* 10px = top-bottom , 5px = left-right */
+}
+
+/* 7. target the rating hover effect & wherever there is the "active" class inside the html this style will be applied over there. we will use js to change the activeness  */
+
+.rating:hover,
+.rating.active {
+  background: darkseagreen;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  color: aliceblue;
+  transition: all 300ms ease;
+}
+
+/* 8. target the button */
+.btn {
+  background-color: darkcyan;
+  color: aliceblue;
+  border: 0;
+  margin: 10px;
+  border-radius: 4px;
+  padding: 12px 30px;
+  cursor: pointer;
+}
+
+/* 9. target the button hover effect */
+
+.btn:hover {
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  transition: all 300ms ease;
+}
+
+/* 10. target the button's active pseudo class (active = when we click on it) */
+
+.btn:active {
+  transform: scale(
+    0.96
+  ); /* change the button size from 100% to 96% when clicked */
+}
+
+/* 1. target the rating class and the image inside that */
+.rating img {
+  width: 40px;
+  clip-path: circle(50% at 50% 50%); /* --making the images circle-- */
+}

@@ -1,0 +1,48 @@
+body {
+  margin: 0;
+  /* bring everything to the center*/
+  display: flex;
+  min-height: 100vh; /* 100% of the view port height*/
+  justify-content: center; /* bring everything to the center horizontally*/
+  align-items: center; /* bring everything to the center vertically*/
+  background-color: salmon;
+  font-family: "Courier New", Courier, monospace;
+}
+
+/* target the 1st div container */
+.container {
+  background-color: rgba(255, 255, 255, 0.3); /* .3 = 30% alpha*/
+  padding: 28px;
+  border-radius: 7px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3); /* 0 = x axis , 10px = y axis , 10px = blurness , .3 = transparency*/
+  width: 90%;
+  margin: 10px;
+  max-width: 450px;
+  /* bring everything to the center */
+  text-align: center;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+/* target the header */
+
+.heading {
+  font-size: 28px;
+}
+
+/* target the input field */
+.input {
+  height: 53px;
+  width: 300px;
+  background-color: rgba(255, 255, 255, 0.6); /* .6 = 60% transparency*/
+  border-color: rgba(255, 255, 255, 0.4);
+  font-size: 16px;
+  padding: 0 42px; /* 0 = top-bottom , 42px = left-right*/
+  border-radius: 5px;
+}
+
+/*  target the 2nd div (meaning-container) */
+
+.meaning-container {
+  display: none; /* we will dynamically show this meaning section using JS*/
+}

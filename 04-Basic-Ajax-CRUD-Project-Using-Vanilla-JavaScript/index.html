@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+    <link rel="stylesheet" href="css/milligram.css" />
+  </head>
+  <body>
+    <div id="loader" class="loading d-none"></div>
+
+    <div class="container">
+      <div class="row">
+        <a href="create.html" class="button button-outline float-left"
+          >Create New</a
+        >
+      </div>
+    </div>
+    <!--- table for storing the json array data-->
+    <div class="container">
+      <div class="row">
+        <table>
+          <thead>
+            <tr>
+              <th>Product Name</th>
+              <th>Product Code</th>
+              <th>Unit Price</th>
+              <th>Qty</th>
+              <th>Total Price</th>
+              <th>Delete</th>
+              <th>Update</th>
+            </tr>
+          </thead>
+          <tbody id="itemList"></tbody>
+        </table>
+      </div>
+    </div>
+    <script src="js/axios.min.js"></script>
+
+    <script>
+      // we are using async in this function because we are going to use await inside this function.
+
+      async function getList() {
+        document.getElementById("loader").classList.remove("d-none"); // the loader will start loading
+
+        let URL = "http://164.68.107.70:6060/api/v1/ReadProduct"; // reading the data.
+        let res = await axios.get(URL); // getting the data from the url.
+
+        document.getElementById("loader").classList.add("d-none"); // after the reading is done we will stop the loader.
+
+        // if the response is 200 then we will use loop to store the json array data inside the table. else we will show error message.
+        if (res.status === 200) {
+          let list = res.data["data"]; // getting the data property from the respon's data.
+          // dynamically storing the json array's data inside table.
+          list.forEach((item) => {
+            document.getElementById("itemList").innerHTML += `<tr>
+                                     <td>${item["ProductName"]}</td>
+                                     <td>${item["ProductCode"]}</td>
+                                     <td>${item["UnitPrice"]}</td>
+                                     <td>${item["Qty"]}</td>
+                                     <td>${item["TotalPrice"]}</td>
+                                     <td><button onclick="deleteItem('${item["_id"]}')">Delete</button></td>    
+                                     <td><button onclick="updateItem('${item["_id"]}')">Update</button></td>
+                            </tr>`; // data will be deleted and updated using _id
+          });
+        } else {
+          alert("Wrong");
+        }
+      }
+
+      async function deleteItem(id) {
+        let URL = `http://164.68.107.70:6060/api/v1/DeleteProduct/${id}`; // when deleting we need to send a get request using id
+        let res = await axios.get(URL);
+        if (res.status === 200) {
+          document.getElementById("itemList").innerHTML = ""; // table body elements will be empty.
+          await getList(); // calling this function data will be refreshed in the table. before refreshing all the table element will be empty and then  the data  will be shown again.
+        }
+      }
+
+      function updateItem(id) {
+        window.location = `update.html?id=${id}`;
+      }
+
+      getList();
+    </script>
+  </body>
+</html>

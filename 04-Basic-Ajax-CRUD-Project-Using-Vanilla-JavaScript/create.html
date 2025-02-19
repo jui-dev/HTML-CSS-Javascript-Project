@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+    <link rel="stylesheet" href="css/milligram.css" />
+  </head>
+  <body>
+    <!--loading div . here we will show a loader while data will be submitted-->
+    <div id="loader" class="loading d-none"></div>
+
+    <div class="container">
+      <div class="row">
+        <div class="column">
+          <label>Product Name</label>
+          <input id="ProductName" type="text" />
+          <label>Product Code</label>
+          <input id="ProductCode" type="text" />
+          <label>Product Image</label>
+          <input id="ProductImg" type="text" />
+          <label>Unit Price</label>
+          <input id="UnitPrice" type="text" />
+          <label>Product Qty</label>
+          <input id="ProductQty" type="text" />
+          <label>Product Total</label>
+          <input id="ProductTotal" type="text" />
+          <button onclick="CreateData()" type="submit">Submit</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/axios.min.js"></script>
+
+    <script>
+      async function CreateData() {
+        // async function because there is an await process inside this function. this createData function will be executed when the submit button will be clicked.
+
+        // getting the value/data from each element of the form using id.
+
+        let ProductName = document.getElementById("ProductName").value;
+        let ProductCode = document.getElementById("ProductCode").value;
+        let ProductImg = document.getElementById("ProductImg").value;
+        let UnitPrice = document.getElementById("UnitPrice").value;
+        let ProductQty = document.getElementById("ProductQty").value;
+        let ProductTotal = document.getElementById("ProductTotal").value;
+
+        let URL = `http://164.68.107.70:6060/api/v1/CreateProduct/`; // we will submit the data in this url.
+
+        document.getElementById("loader").classList.remove("d-none"); // to show the loading animation we are removing d-none css class.
+
+        // using axios to send the data. axios will automatically format the data into json.
+        let res = await axios.post(URL, {
+          Img: ProductImg, // object of the data . while using fetch we have to write some small configurations . but while using axios we dont need to use that.
+          ProductCode: ProductCode,
+          ProductName: ProductName,
+          Qty: ProductQty,
+          TotalPrice: ProductTotal,
+          UnitPrice: UnitPrice,
+        });
+
+        document.getElementById("loader").classList.add("d-none"); // we are stopping the loading animation by adding d-none classList.
+
+        if (res.status === 200) {
+          //res.status === 200 means data is successfully passed.
+          window.location = "index.html"; // we will redirect the user in the index.html file if the response is 200.
+        } else {
+          alert("error"); // if the response status is not 200 then an alert message will be visible.
+        }
+      }
+    </script>
+  </body>
+</html>
